@@ -6,7 +6,7 @@
 /*   By: cbegne <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/30 10:36:45 by cbegne            #+#    #+#             */
-/*   Updated: 2016/12/06 18:31:26 by cbegne           ###   ########.fr       */
+/*   Updated: 2017/02/20 17:21:38 by cbegne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,8 +45,10 @@ int		check_stock(t_get *std, char **line)
 	i = 0;
 	while (std->stock[i] && std->stock[i] != '\n')
 		i++;
-	if (!(*line = ft_strndup(std->stock, i)))
+	tmp = *line;
+	if (!(*line = ft_strnjoin(*line, std->stock, i)))
 		return (-1);
+	free(tmp);
 	if (std->stock[i] == '\n')
 	{
 		i++;
