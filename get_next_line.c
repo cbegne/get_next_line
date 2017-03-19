@@ -6,7 +6,7 @@
 /*   By: cbegne <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/30 10:36:45 by cbegne            #+#    #+#             */
-/*   Updated: 2017/02/20 17:21:38 by cbegne           ###   ########.fr       */
+/*   Updated: 2017/02/26 14:56:22 by cbegne           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,7 @@ int		check_stock(t_get *std, char **line)
 		free(tmp);
 		return (1);
 	}
+	free(std->stock);
 	std->stock = NULL;
 	return (0);
 }
